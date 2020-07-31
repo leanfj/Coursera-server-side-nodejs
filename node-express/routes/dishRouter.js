@@ -25,11 +25,11 @@ dishRouter.route('/')
 
 dishRouter.route('/:dishId')
   .get((req, res, next) => {
-    res.end('Will snd details os the dish: ' + req.params.dishId + ' to you!')
+    res.end('Will send details os the dish: ' + req.params.dishId + ' to you!')
   })
   .post((req, res, next) => {
     res.statusCode = 403
-    res.end('POSt operation not supported on /dishes/' + req.params.dishId)
+    res.end('POST operation not supported on /dishes/' + req.params.dishId)
   })
   .put((req, res, next) => {
     res.write('Updating the dish: ' + req.params.dishId + ' \n');
