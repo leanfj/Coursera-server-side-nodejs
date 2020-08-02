@@ -4,6 +4,8 @@ const http = require('http')
 const bodyParser = require('body-parser')
 
 const dishRoute = require('./routes/dishRouter')
+const promoRoute = require('./routes/promoRouter')
+const leaderRoute = require('./routes/leaderRouter')
 
 const hostName = "localhost"
 
@@ -14,6 +16,8 @@ const app = express()
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use('/dishes', dishRoute)
+app.use('/promotions', promoRoute)
+app.use('/leaders', leaderRoute)
 
 app.use(express.static(`${__dirname}/public`))
 
